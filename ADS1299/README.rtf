@@ -4,12 +4,59 @@
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f0\fs24 \cf0 // Texas Instruments ADS1299 Arduino Library\
+\f0\b\fs24 \cf0 Texas Instruments ADS1299 Arduino Library
+\b0 \
 \
-// Hardware References\
-// [1] ADS1299: {\field{\*\fldinst{HYPERLINK "http://www.ti.com/product/ads1299"}}{\fldrslt http://www.ti.com/product/ads1299}}\
-// [2] ADS1299 Datasheet: {\field{\*\fldinst{HYPERLINK "http://www.ti.com/lit/ds/sbas499a/sbas499a.pdf"}}{\fldrslt http://www.ti.com/lit/ds/sbas499a/sbas499a.pdf}}\
-// [3] ADS1299 Analog Evaluation Module: {\field{\*\fldinst{HYPERLINK "http://www.ti.com/lit/ug/slau443/slau443.pdf"}}{\fldrslt http://www.ti.com/lit/ug/slau443/slau443.pdf}}\
+This folder contains all work and research for the creation of a software bridge between the Texas Instruments ADS1299 EEG/ECG chip and an Arduino.\
+\
+
+\b Hardware References
+\b0 \
+[1] ADS1299: {\field{\*\fldinst{HYPERLINK "http://www.ti.com/product/ads1299"}}{\fldrslt http://www.ti.com/product/ads1299}}\
+[2] ADS1299 Datasheet: {\field{\*\fldinst{HYPERLINK "http://www.ti.com/lit/ds/sbas499a/sbas499a.pdf"}}{\fldrslt http://www.ti.com/lit/ds/sbas499a/sbas499a.pdf}}\
+[3] ADS1299 Analog Evaluation Module: {\field{\*\fldinst{HYPERLINK "http://www.ti.com/lit/ug/slau443/slau443.pdf"}}{\fldrslt http://www.ti.com/lit/ug/slau443/slau443.pdf}}\
+\
+
+\b Files
+\b0 \
+\ul ADS2199.h\ulnone  - Arduino library header file\
+	- contains class methods/variables\
+\ul ADS1299.cpp\ulnone  - Arduino library cpp file\
+	- contains content of methods and references to the page numbers in the above documents\
+	- current methods:\
+		- WAKEUP()\
+		- STANDBY()\
+		- RESET()\
+		- START()\
+		- STOP()\
+		- RDATAC() - read data continuous\
+		- SDATAC() - stop data continuous\
+		- RDATA()\
+		- RREG()\
+		- WREG()\
+		- transfer() - SPI bit transfer\
+		- updateData() - print data from ADS1299 to serial monitor in Arduino IDE\
+\ul Definitions.h \ulnone - Contains all of the variable definitions that are relevant to the ADS1299 chip commands and the SPI communication between the chip and the Arduino.\
+\ul examples/example_2\ulnone  - an example arduino sketch that show you how to use the currently implemented methods of the library\
+\ul keywords.txt\ulnone  - defines the keywords that change color automatically in an arduino sketch using this library\
+\
+
+\b Extra Materials
+\b0 \
+The "reference" folder contains websites that contain relevant information to the development of the code and also options for electrodes and circuit design of active electrodes and other open-source EEG tools.\
+Links from meeting with Sean Montgomery (from Sensorstar Labs):\
+- {\field{\*\fldinst{HYPERLINK "https://www.olimex.com/Products/EEG/OpenEEG/EEG-ANALOG-ASM/"}}{\fldrslt https://www.olimex.com/Products/EEG/OpenEEG/EEG-ANALOG-ASM/}}\
+- {\field{\*\fldinst{HYPERLINK "https://www.olimex.com/Products/EEG/Electrodes/"}}{\fldrslt https://www.olimex.com/Products/EEG/Electrodes/}}\
+- {\field{\*\fldinst{HYPERLINK "https://www.olimex.com/Products/EEG/Electrodes/EEG-AE/"}}{\fldrslt https://www.olimex.com/Products/EEG/Electrodes/EEG-AE/}}\
+- {\field{\*\fldinst{HYPERLINK "https://www.olimex.com/Products/EEG/OpenEEG/EEG-SMT/resources/EEG-SMT-SCHEMATIC-REV-B.pdf"}}{\fldrslt https://www.olimex.com/Products/EEG/OpenEEG/EEG-SMT/resources/EEG-SMT-SCHEMATIC-REV-B.pdf}}\
+- Sean's Website: {\field{\*\fldinst{HYPERLINK "http://produceconsumerobot.com/biosensing/"}}{\fldrslt http://produceconsumerobot.com/biosensing/}}\
+- {\field{\*\fldinst{HYPERLINK "http://www.saelig.com/miva/merchant.mvc?"}}{\fldrslt http://www.saelig.com/miva/merchant.mvc?}}\
+- {\field{\*\fldinst{HYPERLINK "http://www.saelig.com/miva/merchant.mvc?"}}{\fldrslt http://www.saelig.com/miva/merchant.mvc?}}\
+- {\field{\*\fldinst{HYPERLINK "http://www.saelig.com/supplier/plessey/PS25255.pdf"}}{\fldrslt http://www.saelig.com/supplier/plessey/PS25255.pdf}}\
+- {\field{\*\fldinst{HYPERLINK "http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5598518&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5598518"}}{\fldrslt http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5598518&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5598518}}\
+\
+\
+version 1) developed by Conor Russomanno (6/20/13)\
 \
 \
 \
